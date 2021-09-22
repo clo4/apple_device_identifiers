@@ -11,7 +11,7 @@ Sources:
 - Various Reddit threads
 - Apple's device support pages
 - [This Gist](https://gist.github.com/adamawolf/3048717)
-- [blacktop/ipsw](https://github/com/blacktop/ipsw) (specifically,
+- [blacktop/ipsw](https://github.com/blacktop/ipsw) (specifically,
   [this page](https://blacktop.github.io/ipsw/docs/commands/device-list/) in the
   docs)
 - everymac.com, mostly for iPhones
