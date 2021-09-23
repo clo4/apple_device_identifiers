@@ -1,0 +1,24 @@
+name: CI
+on:
+  push:
+    paths:
+      - "**/*.json"
+      - .github/workflows/*.yml
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+
+      - name: Print version
+        run: deno --version
+
+      - name: Check hashes
+        run: |
+          md5sum devices.json mod.ts > hash.md5
+          deno run --no-check --quiet --allow-read=devices --allow-write=devices.json,mod.ts generate.ts
+          md5sum --check hash.md5

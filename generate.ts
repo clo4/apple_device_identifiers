@@ -1,30 +1,44 @@
 import * as path from "https://deno.land/std@0.108.0/path/mod.ts";
 
-async function main() {
-  Deno.chdir(path.dirname(path.fromFileUrl(import.meta.url)));
+function timer() {
+  const start = performance.now();
+  return function time() {
+    return performance.now() - start;
+  };
+}
 
-  const all: Record<string, string> = {};
+async function main(dir = "devices") {
+  const timeWriting = timer();
 
-  for await (const entry of Deno.readDir("devices")) {
-    const string = await Deno.readTextFile(path.join("devices", entry.name));
-    const json = JSON.parse(string);
-    Object.assign(all, json);
-  }
+  const readPromises = [...Deno.readDirSync(dir)]
+    .map((entry) => entry.name)
+    .filter((name) => name.endsWith(".json"))
+    .sort((a, b) => a.localeCompare(b))
+    .map((name) => path.join(dir, name))
+    .map((path) => Deno.readTextFile(path));
 
-  const ids = JSON.stringify(all, null, 2);
+  const files = await Promise.all(readPromises);
+
+  const objects = files.map((text) => JSON.parse(text));
+
+  const data = Object.assign({}, ...objects);
+
+  const devices = JSON.stringify(data, null, 2);
 
   // JSON is now officially a subset of ECMAScript, so this is fine.
-  const out = `
+  const mod = `
 // This file was generated automatically (./generate.ts)
 // Don't edit this file directly.
 
-export const devices = ${ids} as const;
+export const devices = ${devices} as const;
 `.trimStart();
 
   await Promise.all([
-    Deno.writeTextFile("devices.json", ids),
-    Deno.writeTextFile("mod.ts", out),
+    Deno.writeTextFile("devices.json", devices + "\n"),
+    Deno.writeTextFile("mod.ts", mod),
   ]);
+
+  console.log(`Generated in ${timeWriting()} ms`);
 }
 
 if (import.meta.main) {
