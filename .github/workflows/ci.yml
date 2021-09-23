@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - "**/*.json"
+      - .github/workflows/*.yml
 jobs:
   ci:
     runs-on: ubuntu-latest
