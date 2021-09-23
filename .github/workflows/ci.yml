@@ -20,5 +20,5 @@ jobs:
       - name: Check hashes
         run: |
           md5sum devices.json mod.ts > hash.md5
-          deno run -A generate.ts
+          deno run --no-check --quiet --allow-read=devices --allow-write=devices.json,mod.ts generate.ts
           md5sum --check hash.md5
