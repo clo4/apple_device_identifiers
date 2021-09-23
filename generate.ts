@@ -1,6 +1,15 @@
 import * as path from "https://deno.land/std@0.108.0/path/mod.ts";
 
+function timer() {
+  const start = performance.now();
+  return function time() {
+    return performance.now() - start;
+  };
+}
+
 async function main(dir = "devices") {
+  const timeWriting = timer();
+
   const readPromises = [...Deno.readDirSync(dir)]
     .map((entry) => entry.name)
     .filter((name) => name.endsWith(".json"))
@@ -25,9 +34,11 @@ export const devices = ${devices} as const;
 `.trimStart();
 
   await Promise.all([
-    Deno.writeTextFile("devices.json", devices),
+    Deno.writeTextFile("devices.json", devices + "\n"),
     Deno.writeTextFile("mod.ts", mod),
   ]);
+
+  console.log(`Generated in ${timeWriting()} ms`);
 }
 
 if (import.meta.main) {
