@@ -21,7 +21,7 @@ async function main(dir = "devices") {
 
   const objects = files.map((text) => JSON.parse(text));
 
-  const data = Object.assign({}, ...objects);
+  const data = Object.assign({}, ...objects) as Record<string, string>;
 
   const devices = JSON.stringify(data, null, 2);
 

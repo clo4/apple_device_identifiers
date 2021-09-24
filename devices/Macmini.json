@@ -2,8 +2,11 @@
   "Mac mini (M1, 2020)": "Macmini9,1",
   "Mac mini (2018)": "Macmini8,1",
   "Mac mini (Late 2014)": "Macmini7,1",
-  "Mac mini (Late 2012)": "Macmini6,1; Macmini6,2",
-  "Mac mini (Mid 2011)": "Macmini5,1; Macmini5,2",
+  "Mac mini (Late 2012)": "Macmini6,1",
+  "Mac mini (Late 2012, 1TB)": "Macmini6,2",
+  "Mac mini (Mid 2011)": "Macmini5,1",
+  "Mac mini (Mid 2011, Intel Core i7)": "Macmini5,2",
+  "Mac mini (Mid 2011, Server)": "Macmini5,3",
   "Mac mini (Mid 2010)": "Macmini4,1",
   "Mac mini (Late 2009)": "Macmini3,1",
   "Mac mini (Early 2009)": "Macmini3,1"
