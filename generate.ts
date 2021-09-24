@@ -31,6 +31,9 @@ async function main(dir = "devices") {
 // Don't edit this file directly.
 
 export const devices = ${devices} as const;
+
+export type Devices = typeof devices;
+export type Identifier = Devices[keyof Devices];
 `.trimStart();
 
   await Promise.all([
@@ -39,6 +42,12 @@ export const devices = ${devices} as const;
   ]);
 
   console.log(`Generated in ${timeWriting()} ms`);
+
+  const timeFormatting = timer();
+
+  await Deno.run({ cmd: ["deno", "fmt", "--quiet"] }).status();
+
+  console.log(`Formatted in ${timeFormatting()} ms`);
 }
 
 if (import.meta.main) {

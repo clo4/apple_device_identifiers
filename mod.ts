@@ -267,5 +267,8 @@ export const devices = {
   "Mac Pro Server (Mid 2012)": "MacPro5,1",
   "Mac Pro (Mid 2010)": "MacPro5,1",
   "Mac Pro Server (Mid 2010)": "MacPro5,1",
-  "Mac Pro (Early 2009)": "MacPro4,1"
+  "Mac Pro (Early 2009)": "MacPro4,1",
 } as const;
+
+export type Devices = typeof devices;
+export type Identifier = Devices[keyof Devices];
