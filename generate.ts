@@ -20,6 +20,7 @@ async function main(dir = "devices") {
   const data = Object.assign({}, ...objects) as Record<string, string>;
   const devices = JSON.stringify(data, null, 2);
 
+  // 'YYYY-MM-DD'.length === 10
   const yyyymmdd = new Date().toISOString().slice(0, 10);
 
   const mod = `
