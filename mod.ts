@@ -1,6 +1,12 @@
-// This file was generated automatically (./generate.ts)
-// Don't edit this file directly.
+/**
+ * This file was generated automatically on 2021-09-25.
+ *
+ * @module
+ */
 
+/**
+ * A map of device name to device identifier.
+ */
 export const devices = {
   "Apple TV (1st generation)": "AppleTV1,1",
   "Apple TV (2nd generation)": "AppleTV2,1",
@@ -283,5 +289,26 @@ export const devices = {
   "Mac Pro (Early 2009)": "MacPro4,1",
 } as const;
 
+/**
+ * A type that maps device name to device identifier.
+ */
 export type Devices = typeof devices;
+
+/**
+ * An exclusive union of device identifiers. Only currently known identifiers
+ * can be assigned to this type.
+ *
+ * Most of the time, `AnyIdentifier` is a better fit as it also allows
+ * any string to be assigned to it
+ */
 export type Identifier = Devices[keyof Devices];
+
+// All strings can be assigned to `string & {}`, but because it's a distinct
+// type from `string`, the compiler can't simplify the type.
+
+/**
+ * An union of device identifiers. Any string can be assigned to this
+ * type, which allows for future identifiers that were unknown at the time this
+ * list was created.
+ */
+export type AnyIdentifier = Identifier | (string & {});
