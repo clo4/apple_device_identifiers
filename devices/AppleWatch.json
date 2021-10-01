@@ -30,5 +30,10 @@
   "Apple Watch Series 6 (GPS) 40mm": "Watch6,1",
   "Apple Watch Series 6 (GPS) 44mm": "Watch6,2",
   "Apple Watch Series 6 (GPS + Cellular) 40mm": "Watch6,3",
-  "Apple Watch Series 6 (GPS + Cellular) 44mm": "Watch6,4"
+  "Apple Watch Series 6 (GPS + Cellular) 44mm": "Watch6,4",
+
+  "Apple Watch Series 7 (GPS) 41mm": "Watch6,6",
+  "Apple Watch Series 7 (GPS) 45mm": "Watch6,7",
+  "Apple Watch Series 7 (GPS + Cellular) 41mm": "Watch6,8",
+  "Apple Watch Series 7 (GPS + Cellular) 45mm": "Watch6,9"
 }
