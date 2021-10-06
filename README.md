@@ -11,7 +11,7 @@ If you notice something wrong or missing, please open an issue!
 
 ### devices / *.json
 
-The data sources for the files below.
+These files contain the mappings of name to ID. They're manually curated.
 
 ### devices.json
 
@@ -38,35 +38,45 @@ to a giant list.
 There's also a TypeScript module generated for Deno. Because this repository is
 not versioned, you must always pin to a specific commit hash.
 
-<h6>deps/devices.ts</h6>
+<sub><b>deps/devices.ts</b></sub>
 
 ```javascript
 export * from "https://raw.githubusercontent.com/SeparateRecords/apple_device_identifiers/<COMMIT>/mod.ts";
 ```
 
-<h6>mod.ts</h6>
+<sub><b>mod.ts</b></sub>
 
 ```typescript
-import { AnyIdentifier, devices } from "./deps/devices.ts";
+import { devices, Identifier } from "./deps/devices.ts";
 
-const id: AnyIdentifier = devices["iPad mini 3"];
+const id: Identifier = devices["iPad mini 3"];
 ```
 
-## Sources
+Libraries should use `AnyIdentifier` instead of `Identifier` to allow any string
+to be assigned, but still provide suggestions.
+**[Read the documentation][docs]** for information on the exported value and
+types.
+
+[docs]: https://doc.deno.land/https/raw.githubusercontent.com/SeparateRecords/apple_device_identifiers/main/mod.ts
+
+## Sources & Resources
 
 To the best of my knowledge, there's no official list of identifiers, and even
-the products themselves don't always have canonical names.
+the products themselves don't always have canonical names. As a result, the data
+in this repository had to be gathered from a variety of sources.
 
-As a result, the data in this repository had to be gathered from a variety of
-sources:
-
-- Various Reddit threads
-- Apple's device support pages
-- [This Gist](https://gist.github.com/adamawolf/3048717)
-- [blacktop/ipsw](https://github.com/blacktop/ipsw) (specifically,
+- **https://everymac.com** - a pretty good compilation, but the website is slow
+  and can't be used in code.
+- **https://www.theiphonewiki.com** - a great resource to reference for mobile
+  devices.
+- **https://github.com/blacktop/ipsw** -
   [this page](https://blacktop.github.io/ipsw/docs/commands/device-list/) in the
-  docs)
-- everymac.com, mostly for iPhones
+  docs has IDs, but not all of them have descriptive product names.
+- **[This Gist by @adamawolf](https://gist.github.com/adamawolf/3048717)** -
+  lists most mobile devices.
+- **Apple's "Identify your device" pages** - Mac pages have identifiers, but
+  they're not consistent.
+- **Various threads on Reddit** - thanks, kind internet strangers!
 
 ## Contributing
 
