@@ -1,5 +1,5 @@
 /**
- * This file was generated automatically on 2021-10-01.
+ * This file was generated automatically on 2021-10-23.
  *
  * @module
  */
@@ -318,4 +318,5 @@ export type Identifier = Devices[keyof Devices];
  * type, which allows for future identifiers that were unknown at the time this
  * list was created.
  */
+// deno-lint-ignore ban-types
 export type AnyIdentifier = Identifier | (string & {});

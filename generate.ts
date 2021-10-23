@@ -1,4 +1,4 @@
-import * as path from "https://deno.land/std@0.108.0/path/mod.ts";
+import * as path from "https://deno.land/std@0.112.0/path/mod.ts";
 
 function timer() {
   const start = performance.now();
@@ -35,7 +35,6 @@ async function main(dir = "devices") {
  */
 export const devices = ${devices} as const;
 
-
 /**
  * A type that maps device name to device identifier.
  */
@@ -58,6 +57,7 @@ export type Identifier = Devices[keyof Devices];
  * type, which allows for future identifiers that were unknown at the time this
  * list was created.
  */
+// deno-lint-ignore ban-types
 export type AnyIdentifier = Identifier | (string & {});
 `.trimStart();
 
