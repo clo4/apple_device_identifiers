@@ -65,7 +65,7 @@ export type AnyIdentifier = Identifier | (string & {});
     Deno.writeTextFile("devices.json", devices + "\n"),
     Deno.writeTextFile("mod.ts", mod),
   ]);
-  console.log(`Generated files ${timeCreating()} ms`);
+  console.log(`Generated files in ${timeCreating()} ms`);
 
   const timeFormatting = timer();
   await Deno.run({ cmd: ["deno", "fmt", "--quiet"] }).status();
