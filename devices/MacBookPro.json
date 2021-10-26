@@ -59,5 +59,10 @@
   "MacBook Pro (13-inch, 2020, Two Thunderbolt 3 ports)": "MacBookPro16,3",
   "MacBook Pro (16-inch, 2019, AMD Radeon Pro 5600M)": "MacBookPro16,4",
 
-  "MacBook Pro (13-inch, 2020, M1)": "MacBookPro17,1"
+  "MacBook Pro (13-inch, 2020, M1)": "MacBookPro17,1",
+
+  "MacBook Pro (16-inch, 2021, M1 Pro)": "MacBookPro18,1",
+  "MacBook Pro (16-inch, 2021, M1 Max)": "MacBookPro18,2",
+  "MacBook Pro (14-inch, 2021, M1 Pro)": "MacBookPro18,3",
+  "MacBook Pro (14-inch, 2021, M1 Max)": "MacBookPro18,4"
 }
