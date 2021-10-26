@@ -6,7 +6,7 @@ function timer() {
 }
 
 async function main(dir = "devices") {
-  const timeWriting = timer();
+  const timeCreating = timer();
 
   const readPromises = [...Deno.readDirSync(dir)]
     .map((entry) => entry.name)
@@ -65,7 +65,7 @@ export type AnyIdentifier = Identifier | (string & {});
     Deno.writeTextFile("devices.json", devices + "\n"),
     Deno.writeTextFile("mod.ts", mod),
   ]);
-  console.log(`Wrote files ${timeWriting()} ms`);
+  console.log(`Generated files in ${timeCreating()} ms`);
 
   const timeFormatting = timer();
   await Deno.run({ cmd: ["deno", "fmt", "--quiet"] }).status();
