@@ -23,10 +23,10 @@ jobs:
           d='[0-9]'
           sub="s/$d$d$d$d-$d$d-$d$d/YYYY-MM-DD/g"
 
-          sed -i -e $sub mod.ts
+          sed -i '' -e $sub mod.ts
           md5sum devices.json mod.ts > hash.md5
 
           deno run --no-check --quiet --allow-read=devices --allow-write=devices.json,mod.ts --allow-run=deno generate.ts
 
-          sed -i -e $sub mod.ts
+          sed -i '' -e $sub mod.ts
           md5sum --check hash.md5
