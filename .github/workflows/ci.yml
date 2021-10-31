@@ -19,14 +19,15 @@ jobs:
         run: deno --version
 
       - name: Check hashes
+        # Replace instances of \d\d\d\d-\d\d-\d\d with literal 'YYYY-MM-DD'
+        # to prevent CI from failing when the file wasn't generated on the same
+        # day.
+        # NOTE: On ubuntu, the argument to -i is optional.
         run: |
-          d='[0-9]'
-          sub="s/$d$d$d$d-$d$d-$d$d/YYYY-MM-DD/g"
-
-          sed -i '' -e $sub mod.ts
+          sed -i -e 's/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/YYYY-MM-DD/g' mod.ts
           md5sum devices.json mod.ts > hash.md5
 
           deno run --no-check --quiet --allow-read=devices --allow-write=devices.json,mod.ts --allow-run=deno generate.ts
 
-          sed -i '' -e $sub mod.ts
+          sed -i -e 's/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/YYYY-MM-DD/g' mod.ts
           md5sum --check hash.md5
