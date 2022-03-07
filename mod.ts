@@ -1,5 +1,5 @@
 /**
- * This file was generated automatically on 2022-03-03.
+ * This file was generated automatically on 2022-03-06.
  *
  * @module
  */
@@ -8,7 +8,11 @@
  * A map of device name to device identifier.
  */
 export const devices = {
-  "AirPort Express 802.11n (1st generation)": "Airport4,107",
+  "AirPods (1st generation)": "AirPods1,1",
+  "AirPods (2nd generation)": "AirPods2,1",
+  "AirPods Pro": "iProd8,1",
+  "AirPods Max": "iProd8,6",
+  "AirPort Express 802.11n (1st generation)": "AirPort4,107",
   "AirPort Express 802.11n (2nd generation)": "AirPort10,115",
   "Apple TV (1st generation)": "AppleTV1,1",
   "Apple TV (2nd generation)": "AppleTV2,1",
