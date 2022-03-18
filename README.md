@@ -83,13 +83,14 @@ in this repository had to be gathered from a variety of sources.
 Always run the generate script before committing.
 
 ```bash
-deno run --no-check --quiet -A generate.ts
+deno run -A generate.ts
 ```
 
-Here's the minimum run permissions (from the root of the repository):
+You can also use tasks (introduced in Deno 1.20)
 
 ```bash
-deno run --no-check --quiet --allow-read=devices --allow-write=devices.json,mod.ts --allow-run=deno generate.ts
+deno task build  # generate files
+deno task watch  # watch for changes
 ```
 
 ## License
