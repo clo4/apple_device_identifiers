@@ -74,24 +74,36 @@ in this repository had to be gathered from a variety of sources.
   docs has IDs, but not all of them have descriptive product names.
 - **[This Gist by @adamawolf](https://gist.github.com/adamawolf/3048717)** -
   lists most mobile devices.
+- **[Geekbench Browser](https://browser.geekbench.com)** - when new devices are
+  released, reviewers tend to upload their scores.
+- **Xcode database files** - Xcode includes databases of device traits
+  ([see below](#list-device_traitsdb-files))
 - **Apple's "Identify your device" pages** - Mac pages have identifiers, but
   they're not consistent.
 - **Various threads on Reddit** - thanks, kind internet strangers!
 
-## Contributing
+### List device_traits.db files
 
-Always run the generate script before committing.
+These can be opened using the sqlite3 CLI, or a GUI like
+[DB Browser for SQLite](https://sqlitebrowser.org/). The table of interest is
+`devices`.
 
 ```bash
-deno run -A generate.ts
+find /Applications/Xcode.app/Contents/Developer/Platforms -name 'device_traits.db' 2>/dev/null
 ```
 
-You can also use tasks (introduced in Deno 1.20)
+## Contributing
+
+Always run the `build` task before committing, or use `watch` while making
+changes.
 
 ```bash
 deno task build  # generate files
 deno task watch  # watch for changes
 ```
+
+To add a new class of devices, just add a new JSON file to the
+[devices](devices) folder.
 
 ## License
 
