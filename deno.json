@@ -1,0 +1,21 @@
+{
+  "tasks": {
+    "build": "deno run --allow-read=devices --allow-write=devices.json,mod.ts --allow-run=deno --quiet --no-check build.ts",
+    "watch": "deno run --allow-read=devices --allow-write=devices.json,mod.ts --allow-run=deno --quiet --no-check build.ts --watch",
+    "bump": "deno run --allow-all --quiet https://deno.land/x/udd@0.7.2/main.ts build.ts"
+  },
+  "fig": {
+    "build": {
+      "description": "Generate `devices.json` and `mod.ts`",
+      "icon": "🛠"
+    },
+    "watch": {
+      "description": "Watch for changes and regenerate",
+      "icon": "👀"
+    },
+    "bump": {
+      "description": "Bump dependency versions",
+      "icon": "🐄"
+    }
+  }
+}

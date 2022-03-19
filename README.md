@@ -1,5 +1,8 @@
 # apple_device_identifiers
 
+[Structure](#structure) • [Usage](#usage) • [Sources](#sources--resources) •
+[Contributing](#contributing) • [License](#license)
+
 A best-effort compilation of Apple's device identifiers, starting from the late
 2000s. Everything in this repository is public domain (see
 [UNLICENSE](./UNLICENSE)), so you can vendor any files you need without having
@@ -22,10 +25,10 @@ above.
 
 A generated TypeScript module that makes it easy to use this data from Deno.
 
-### generate.ts
+### build.ts
 
-A Deno script that generates devices.json and mod.ts using the data in the
-devices directory. See [#contributing](#contributing).
+A Deno script that builds devices.json and mod.ts using the data in the devices
+directory. See [#contributing](#contributing).
 
 ## Usage
 
@@ -53,7 +56,7 @@ const id: Identifier = devices["iPad mini 3"];
 ```
 
 Libraries should use `AnyIdentifier` instead of `Identifier` to allow any string
-to be assigned, but still provide suggestions.
+to be assigned, while still providing suggestions.
 **[Read the documentation][docs]** for information on the exported value and
 types.
 
@@ -74,23 +77,36 @@ in this repository had to be gathered from a variety of sources.
   docs has IDs, but not all of them have descriptive product names.
 - **[This Gist by @adamawolf](https://gist.github.com/adamawolf/3048717)** -
   lists most mobile devices.
+- **[Geekbench Browser](https://browser.geekbench.com)** - when new devices are
+  released, reviewers tend to upload their scores.
+- **Xcode database files** - Xcode includes databases of device traits
+  ([see below](#list-device_traitsdb-files))
 - **Apple's "Identify your device" pages** - Mac pages have identifiers, but
   they're not consistent.
 - **Various threads on Reddit** - thanks, kind internet strangers!
 
+### List device_traits.db files
+
+These can be opened using the sqlite3 CLI, or a GUI like
+[DB Browser for SQLite](https://sqlitebrowser.org/). The table of interest is
+`devices`.
+
+```bash
+find /Applications/Xcode.app/Contents/Developer/Platforms -name 'device_traits.db' 2>/dev/null
+```
+
 ## Contributing
 
-Always run the generate script before committing.
+Always run the `build` task before committing, or use `watch` while making
+changes.
 
 ```bash
-deno run --no-check --quiet -A generate.ts
+deno task build  # generate files
+deno task watch  # watch for changes
 ```
 
-Here's the minimum run permissions (from the root of the repository):
-
-```bash
-deno run --no-check --quiet --allow-read=devices --allow-write=devices.json,mod.ts --allow-run=deno generate.ts
-```
+To add a new class of devices, just add a new JSON file to the
+[devices](devices) folder.
 
 ## License
 

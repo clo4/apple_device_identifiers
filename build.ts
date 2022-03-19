@@ -1,18 +1,27 @@
-import * as path from "https://deno.land/std@0.112.0/path/mod.ts";
+#!/usr/bin/env deno --quiet --allow-all
+
+import * as path from "https://deno.land/std@0.130.0/path/mod.ts";
+import { debounce } from "https://deno.land/std@0.130.0/async/debounce.ts";
 
 function timer() {
   const start = performance.now();
   return () => performance.now() - start;
 }
 
-async function main(dir = "devices") {
-  const timeCreating = timer();
+async function generate(init: {
+  inputDirectory: string;
+  outputJson: string;
+  outputTypescript: string;
+}) {
+  const { inputDirectory, outputJson, outputTypescript } = init;
 
-  const readPromises = [...Deno.readDirSync(dir)]
+  const time = timer();
+
+  const readPromises = [...Deno.readDirSync(inputDirectory)]
     .map((entry) => entry.name)
     .filter((name) => name.endsWith(".json"))
     .sort((a, b) => a.localeCompare(b))
-    .map((name) => path.join(dir, name))
+    .map((name) => path.join(inputDirectory, name))
     .map((path) => Deno.readTextFile(path));
 
   const files = await Promise.all(readPromises);
@@ -62,16 +71,34 @@ export type AnyIdentifier = Identifier | (string & {});
 `.trimStart();
 
   await Promise.all([
-    Deno.writeTextFile("devices.json", devices + "\n"),
-    Deno.writeTextFile("mod.ts", mod),
+    Deno.writeTextFile(outputJson, devices + "\n"),
+    Deno.writeTextFile(outputTypescript, mod),
   ]);
-  console.log(`Generated files in ${timeCreating()} ms`);
 
-  const timeFormatting = timer();
   await Deno.run({ cmd: ["deno", "fmt", "--quiet"] }).status();
-  console.log(`Formatted in ${timeFormatting()} ms`);
+  console.log("%c√", "color: green", `Generated in ${time()} ms`);
 }
 
-if (import.meta.main) {
-  main();
+async function main() {
+  const thisFile = path.fromFileUrl(import.meta.url);
+  const thisDir = path.dirname(thisFile);
+
+  const inputDirectory = path.join(thisDir, "devices");
+  const outputJson = path.join(thisDir, "devices.json");
+  const outputTypescript = path.join(thisDir, "mod.ts");
+
+  const run = () => generate({ inputDirectory, outputJson, outputTypescript });
+
+  if (Deno.args.includes("--watch")) {
+    console.log("Building and watching for changes, ^c to exit");
+    const generateDebounced = debounce(run, 500);
+    run();
+    for await (const _ of Deno.watchFs(inputDirectory)) {
+      generateDebounced();
+    }
+  } else {
+    run();
+  }
 }
+
+if (import.meta.main) main();
