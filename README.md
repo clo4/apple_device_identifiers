@@ -1,5 +1,8 @@
 # apple_device_identifiers
 
+[Structure](#structure) • [Usage](#usage) • [Sources](#sources--resources) •
+[Contributing](#contributing) • [License](#license)
+
 A best-effort compilation of Apple's device identifiers, starting from the late
 2000s. Everything in this repository is public domain (see
 [UNLICENSE](./UNLICENSE)), so you can vendor any files you need without having
@@ -24,8 +27,8 @@ A generated TypeScript module that makes it easy to use this data from Deno.
 
 ### build.ts
 
-A Deno script that builds devices.json and mod.ts using the data in the
-devices directory. See [#contributing](#contributing).
+A Deno script that builds devices.json and mod.ts using the data in the devices
+directory. See [#contributing](#contributing).
 
 ## Usage
 
