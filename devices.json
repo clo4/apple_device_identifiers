@@ -147,6 +147,8 @@
   "iPad Pro 12.9 inch (5th generation) Wi-Fi + Cellular (US)": "iPad13,9",
   "iPad Pro 12.9 inch (5th generation) Wi-Fi + Cellular (Global)": "iPad13,10",
   "iPad Pro 12.9 inch (5th generation) Wi-Fi + Cellular (China)": "iPad13,11",
+  "iPad Air (5th generation) Wi-Fi": "iPad13,16",
+  "iPad Air (5th generation) Wi-Fi + Cellular": "iPad13,17",
   "iPad mini (6th generation) Wi-Fi": "iPad14,1",
   "iPad mini (6th generation) Wi-Fi + Cellular": "iPad14,2",
   "iPhone": "iPhone1,1",
@@ -193,6 +195,7 @@
   "iPhone 13 Pro Max": "iPhone14,3",
   "iPhone 13 Mini": "iPhone14,4",
   "iPhone 13": "iPhone14,5",
+  "iPhone SE (3rd generation)": "iPhone14,6",
   "iPod touch (1st generation)": "iPod1,1",
   "iPod touch (2nd generation)": "iPod2,1",
   "iPod touch (3rd generation)": "iPod3,1",
@@ -297,5 +300,7 @@
   "Mac Pro Server (Mid 2012)": "MacPro5,1",
   "Mac Pro (Mid 2010)": "MacPro5,1",
   "Mac Pro Server (Mid 2010)": "MacPro5,1",
-  "Mac Pro (Early 2009)": "MacPro4,1"
+  "Mac Pro (Early 2009)": "MacPro4,1",
+  "Mac Studio (2022, M1 Max)": "Mac13,1",
+  "Mac Studio (2022, M1 Ultra)": "Mac13,2"
 }

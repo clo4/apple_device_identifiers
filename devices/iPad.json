@@ -90,6 +90,9 @@
   "iPad Pro 12.9 inch (5th generation) Wi-Fi + Cellular (Global)": "iPad13,10",
   "iPad Pro 12.9 inch (5th generation) Wi-Fi + Cellular (China)": "iPad13,11",
 
+  "iPad Air (5th generation) Wi-Fi": "iPad13,16",
+  "iPad Air (5th generation) Wi-Fi + Cellular": "iPad13,17",
+
   "iPad mini (6th generation) Wi-Fi": "iPad14,1",
   "iPad mini (6th generation) Wi-Fi + Cellular": "iPad14,2"
 }
