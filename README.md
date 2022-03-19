@@ -22,9 +22,9 @@ above.
 
 A generated TypeScript module that makes it easy to use this data from Deno.
 
-### generate.ts
+### build.ts
 
-A Deno script that generates devices.json and mod.ts using the data in the
+A Deno script that builds devices.json and mod.ts using the data in the
 devices directory. See [#contributing](#contributing).
 
 ## Usage
@@ -53,7 +53,7 @@ const id: Identifier = devices["iPad mini 3"];
 ```
 
 Libraries should use `AnyIdentifier` instead of `Identifier` to allow any string
-to be assigned, but still provide suggestions.
+to be assigned, while still providing suggestions.
 **[Read the documentation][docs]** for information on the exported value and
 types.
 
