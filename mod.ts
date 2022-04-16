@@ -1,5 +1,5 @@
 /**
- * This file was generated automatically on 2022-03-16.
+ * This file was generated automatically on 2022-04-16.
  *
  * @module
  */
@@ -51,6 +51,7 @@ export const devices = {
   "Apple Watch Series 7 (GPS) 45mm": "Watch6,7",
   "Apple Watch Series 7 (GPS + Cellular) 41mm": "Watch6,8",
   "Apple Watch Series 7 (GPS + Cellular) 45mm": "Watch6,9",
+  "Apple Studio Display": "AppleDisplay2,1",
   "HomePod": "AudioAccessory1,1",
   "HomePod (Revision)": "AudioAccessory1,2",
   "HomePod Mini": "AudioAccessory5,1",
