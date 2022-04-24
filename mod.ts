@@ -1,5 +1,5 @@
 /**
- * This file was generated automatically on 2022-04-16.
+ * This file was generated automatically on 2022-04-24.
  *
  * @module
  */
@@ -14,6 +14,7 @@ export const devices = {
   "AirPods Max": "iProd8,6",
   "AirPort Express 802.11n (1st generation)": "AirPort4,107",
   "AirPort Express 802.11n (2nd generation)": "AirPort10,115",
+  "AirTag": "AirTag1,1",
   "Apple TV (1st generation)": "AppleTV1,1",
   "Apple TV (2nd generation)": "AppleTV2,1",
   "Apple TV (3rd generation, Early 2012)": "AppleTV3,1",
