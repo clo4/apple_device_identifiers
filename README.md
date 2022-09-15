@@ -12,14 +12,13 @@ If you notice something wrong or missing, please open an issue!
 
 ## Structure
 
-### devices / *.json
+### devices/*.json
 
 These files contain the mappings of name to ID. They're manually curated.
 
-### devices.json
+### devices.json, ids.json
 
-A generated JSON file containing the aggregate of data from the JSON files
-above.
+Generated JSON files containing all the data from the JSON files above.
 
 ### mod.ts
 
