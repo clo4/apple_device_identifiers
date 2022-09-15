@@ -1,7 +1,7 @@
 {
   "tasks": {
-    "build": "deno run --allow-read=devices --allow-write=devices.json,mod.ts --allow-run=deno --quiet --no-check build.ts",
-    "watch": "deno run --allow-read=devices --allow-write=devices.json,mod.ts --allow-run=deno --quiet --no-check build.ts --watch",
+    "build": "deno run --allow-read=devices --allow-write=devices.json,ids.json,mod.ts --allow-run=deno --quiet --no-check build.ts",
+    "watch": "deno run --allow-read=devices --allow-write=devices.json,ids.json,mod.ts --allow-run=deno --quiet --no-check build.ts --watch",
     "bump": "deno run --allow-all --quiet https://deno.land/x/udd@0.7.2/main.ts build.ts"
   },
   "fig": {
