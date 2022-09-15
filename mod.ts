@@ -334,7 +334,7 @@ export const devices = {
 /**
  * A map of device identifier to device name.
  */
-export const ids = {
+export const identifiers = {
   "AirPods1,1": ["AirPods (1st generation)"],
   "AirPods2,1": ["AirPods (2nd generation)"],
   "iProd8,1": ["AirPods Pro"],
@@ -717,7 +717,7 @@ export type DeviceName = keyof typeof devices;
  * Most of the time, `AnyIdentifier` is a better fit as it also allows
  * any string to be assigned to it.
  */
-export type Identifier = Devices[keyof Devices];
+export type Identifier = keyof identifiers;
 
 // All strings can be assigned to `string & {}`, but because it's a distinct
 // type from `string`, the compiler can't simplify the type.

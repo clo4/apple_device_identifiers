@@ -38,7 +38,7 @@ async function generate({
     const arr = (idsToNames[id] ??= [] as string[]);
     arr.push(name);
   }
-  const ids = JSON.stringify(idsToNames);
+  const identifiers = JSON.stringify(idsToNames);
   const devices = JSON.stringify(data);
 
   // 'YYYY-MM-DD'.length === 10
@@ -59,7 +59,7 @@ export const devices = ${devices} as const;
 /**
  * A map of device identifier to device name.
  */
-export const ids = ${ids} as const;
+export const identifiers = ${identifiers} as const;
 
 /**
  * A type that maps device name to device identifier.
@@ -82,7 +82,7 @@ export type DeviceName = keyof typeof devices;
  * Most of the time, \`AnyIdentifier\` is a better fit as it also allows
  * any string to be assigned to it.
  */
-export type Identifier = Devices[keyof Devices];
+export type Identifier = keyof identifiers;
 
 // All strings can be assigned to \`string & {}\`, but because it's a distinct
 // type from \`string\`, the compiler can't simplify the type.
@@ -107,7 +107,7 @@ export type AnyDeviceName = StringSuggestions<DeviceName>;
 
   await Promise.all([
     Deno.writeTextFile(outputJsonDevices, devices + "\n"),
-    Deno.writeTextFile(outputJsonIds, ids + "\n"),
+    Deno.writeTextFile(outputJsonIds, identifiers + "\n"),
     Deno.writeTextFile(outputTypescript, mod),
   ]);
 
