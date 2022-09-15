@@ -31,3 +31,6 @@ jobs:
 
           sed -i -e 's/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/YYYY-MM-DD/g' mod.ts
           md5sum --check hash.md5
+      
+      - name: Check types
+        run: deno check mod.ts
