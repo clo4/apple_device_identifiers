@@ -717,7 +717,7 @@ export type DeviceName = keyof typeof devices;
  * Most of the time, `AnyIdentifier` is a better fit as it also allows
  * any string to be assigned to it.
  */
-export type Identifier = keyof identifiers;
+export type Identifier = keyof typeof identifiers;
 
 // All strings can be assigned to `string & {}`, but because it's a distinct
 // type from `string`, the compiler can't simplify the type.
