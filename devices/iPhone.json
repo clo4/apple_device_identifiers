@@ -55,5 +55,10 @@
   "iPhone 13 Pro Max": "iPhone14,3",
   "iPhone 13 Mini": "iPhone14,4",
   "iPhone 13": "iPhone14,5",
-  "iPhone SE (3rd generation)": "iPhone14,6"
+  "iPhone SE (3rd generation)": "iPhone14,6",
+
+  "iPhone 14": "iPhone14,7",
+  "iPhone 14 Plus": "iPhone14,8",
+  "iPhone 14 Pro": "iPhone15,2",
+  "iPhone 14 Pro Max": "iPhone15,3"
 }

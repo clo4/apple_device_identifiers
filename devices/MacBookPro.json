@@ -64,5 +64,7 @@
   "MacBook Pro (16-inch, 2021, M1 Pro)": "MacBookPro18,1",
   "MacBook Pro (16-inch, 2021, M1 Max)": "MacBookPro18,2",
   "MacBook Pro (14-inch, 2021, M1 Pro)": "MacBookPro18,3",
-  "MacBook Pro (14-inch, 2021, M1 Max)": "MacBookPro18,4"
+  "MacBook Pro (14-inch, 2021, M1 Max)": "MacBookPro18,4",
+
+  "MacBook Pro (13-inch, 2022, M2)": "Mac14,7"
 }
