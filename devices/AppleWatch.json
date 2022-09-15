@@ -35,5 +35,17 @@
   "Apple Watch Series 7 (GPS) 41mm": "Watch6,6",
   "Apple Watch Series 7 (GPS) 45mm": "Watch6,7",
   "Apple Watch Series 7 (GPS + Cellular) 41mm": "Watch6,8",
-  "Apple Watch Series 7 (GPS + Cellular) 45mm": "Watch6,9"
+  "Apple Watch Series 7 (GPS + Cellular) 45mm": "Watch6,9",
+
+  "Apple Watch SE (GPS) 40mm": "Watch6,10",
+  "Apple Watch SE (GPS) 44mm": "Watch6,11",
+  "Apple Watch SE (GPS + Cellular) 40mm": "Watch6,12",
+  "Apple Watch SE (GPS + Cellular) 44mm": "Watch6,13",
+
+  "Apple Watch Series 8 (GPS) 41mm": "Watch6,14",
+  "Apple Watch Series 8 (GPS) 45mm": "Watch6,15",
+  "Apple Watch Series 8 (GPS + Cellular) 41mm": "Watch6,16",
+  "Apple Watch Series 8 (GPS + Cellular) 45mm": "Watch6,17",
+
+  "Apple Watch Ultra": "Watch6,18"
 }
