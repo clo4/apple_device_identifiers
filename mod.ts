@@ -1,5 +1,5 @@
 /**
- * This file was generated automatically on 2022-09-15.
+ * This file was generated automatically on 2022-11-09.
  *
  * @module
  */
@@ -171,6 +171,14 @@ export const devices = {
   "iPad Air (5th generation) Wi-Fi + Cellular": "iPad13,17",
   "iPad mini (6th generation) Wi-Fi": "iPad14,1",
   "iPad mini (6th generation) Wi-Fi + Cellular": "iPad14,2",
+  "iPad (10th generation) Wi-Fi": "iPad13,18",
+  "iPad (10th generation) Wi-Fi + Cellular": "iPad13,19",
+  "iPad Air 5th Gen (WiFi)": "iPad13,16",
+  "iPad Air 5th Gen (WiFi + Cellular)": "iPad13,17",
+  "iPad Pro 11 inch (4rd generation) Wi-Fi": "iPad14,3",
+  "iPad Pro 11 inch (4rd generation) Wi-Fi + Cellular": "iPad14,4",
+  "iPad Pro 12.9 inch (6th generation) Wi-Fi": "iPad14,5",
+  "iPad Pro 12.9 inch (6th generation) Wi-Fi + Cellular": "iPad14,6",
   "iPhone": "iPhone1,1",
   "iPhone 3G": "iPhone1,2",
   "iPhone 3GS": "iPhone2,1",
@@ -498,10 +506,19 @@ export const identifiers = {
     "iPad Pro 12.9 inch (5th generation) Wi-Fi + Cellular (Global)",
   ],
   "iPad13,11": ["iPad Pro 12.9 inch (5th generation) Wi-Fi + Cellular (China)"],
-  "iPad13,16": ["iPad Air (5th generation) Wi-Fi"],
-  "iPad13,17": ["iPad Air (5th generation) Wi-Fi + Cellular"],
+  "iPad13,16": ["iPad Air (5th generation) Wi-Fi", "iPad Air 5th Gen (WiFi)"],
+  "iPad13,17": [
+    "iPad Air (5th generation) Wi-Fi + Cellular",
+    "iPad Air 5th Gen (WiFi + Cellular)",
+  ],
   "iPad14,1": ["iPad mini (6th generation) Wi-Fi"],
   "iPad14,2": ["iPad mini (6th generation) Wi-Fi + Cellular"],
+  "iPad13,18": ["iPad (10th generation) Wi-Fi"],
+  "iPad13,19": ["iPad (10th generation) Wi-Fi + Cellular"],
+  "iPad14,3": ["iPad Pro 11 inch (4rd generation) Wi-Fi"],
+  "iPad14,4": ["iPad Pro 11 inch (4rd generation) Wi-Fi + Cellular"],
+  "iPad14,5": ["iPad Pro 12.9 inch (6th generation) Wi-Fi"],
+  "iPad14,6": ["iPad Pro 12.9 inch (6th generation) Wi-Fi + Cellular"],
   "iPhone1,1": ["iPhone"],
   "iPhone1,2": ["iPhone 3G"],
   "iPhone2,1": ["iPhone 3GS"],
