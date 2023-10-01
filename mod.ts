@@ -1,5 +1,5 @@
 /**
- * This file was generated automatically on 2022-11-09.
+ * This file was generated automatically on 2023-10-01.
  *
  * @module
  */
@@ -228,6 +228,10 @@ export const devices = {
   "iPhone 14 Plus": "iPhone14,8",
   "iPhone 14 Pro": "iPhone15,2",
   "iPhone 14 Pro Max": "iPhone15,3",
+  "iPhone 15": "iPhone15,4",
+  "iPhone 15 Plus": "iPhone15,5",
+  "iPhone 15 Pro": "iPhone16,1",
+  "iPhone 15 Pro Max": "iPhone16,2",
   "iPod touch (1st generation)": "iPod1,1",
   "iPod touch (2nd generation)": "iPod2,1",
   "iPod touch (3rd generation)": "iPod3,1",
@@ -568,6 +572,10 @@ export const identifiers = {
   "iPhone14,8": ["iPhone 14 Plus"],
   "iPhone15,2": ["iPhone 14 Pro"],
   "iPhone15,3": ["iPhone 14 Pro Max"],
+  "iPhone15,4": ["iPhone 15"],
+  "iPhone15,5": ["iPhone 15 Plus"],
+  "iPhone16,1": ["iPhone 15 Pro"],
+  "iPhone16,2": ["iPhone 15 Pro Max"],
   "iPod1,1": ["iPod touch (1st generation)"],
   "iPod2,1": ["iPod touch (2nd generation)"],
   "iPod3,1": ["iPod touch (3rd generation)"],
